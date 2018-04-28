@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>LoggedIn</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+
+  <link href="assets/css/Cosmo/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <!-- Below is the initialization snippet for my Firebase project. It will vary for each project-->
@@ -13,12 +20,12 @@
 <script>
   // Initialize Firebase
   var config = {
-  apiKey: "AIzaSyASRuqWmMZXjY-vsWis0rAz3Li_zG2erac",
-  authDomain: "mypro1-a5ac8.firebaseapp.com",
-  databaseURL: "https://mypro1-a5ac8.firebaseio.com",
-  projectId: "mypro1-a5ac8",
-  storageBucket: "mypro1-a5ac8.appspot.com",
-  messagingSenderId: "990386012661"
+    apiKey: "AIzaSyASRuqWmMZXjY-vsWis0rAz3Li_zG2erac",
+    authDomain: "mypro1-a5ac8.firebaseapp.com",
+    databaseURL: "https://mypro1-a5ac8.firebaseio.com",
+    projectId: "mypro1-a5ac8",
+    storageBucket: "mypro1-a5ac8.appspot.com",
+    messagingSenderId: "990386012661"
   };
   firebase.initializeApp(config);
 </script>
@@ -27,24 +34,54 @@
 <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
 
-<!-- A simple script to add text to the page that displays the user's Display Name and Email -->
-<script>
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      document.body.innerHTML = '<h1>Congrats ' + user.displayName + 
-        ', you are done!</h1><h2>Now get back to what you love building.</h2><h2>' +
-          'Need to verify your email address or reset your password?' + 
-          'Firebase can handle all of that for you using the email you provided: ' + 
-          user.email + '</h2>'+ '<h1>Proceed to the web site <a href="trainscheduler.html">' + 
-          'Train Scheduler</a> with firebase authentication as well as the funtionality of updating ' 
-          + 'the next train arrival time and minutes left fields</h1>';
-    }
-    else {
-      console.log("no user signed in");
-    }      
-  });
-</script>
-<body></body>
-<h1>Congratulations you're done! Now get back to what you love building.</h1>
+<body>
+    <!-- A simple script to add text to the page that displays the user's Display Name and Email -->
+    <script>
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          document.body.innerHTML = '<h1>Congrats ' + user.displayName + 
+            ', you are done!</h1><h2>Now get back to what you love building.</h2><h2>' +
+              'Need to verify your email address or reset your password? ' + 
+              'Firebase can handle all of that for you using the email you provided: ' + 
+              user.email + '</h2><h1>Proceed to the web site <a href="trainscheduler.html">Train Scheduler.</a></h1>';
+        }
+        else {
+          console.log("no user signed in");
+        }      
+      });
+    </script>
+    
+    <h1>Congratulations you're done! Now get back to what you love building.</h1>
+
+    <div class="row">
+        <div class="col col-md-6">
+          <!-- The surrounding HTML is left untouched by FirebaseUI.
+                     Your app may use that space for branding, controls and other customizations.-->
+          <div id="loggedIn"></div>
+          <h1 align="center" style="color:rgb(70, 34, 34);">Hurry. Catch the next one! Hit the pedal!</h1>
+    
+        </div>
+        <div class="col col-md-6">
+          <!-- Include a simple background image & title -->
+          <div id="login-image" align="center">
+            <img src="assets/css/PE3.jpg">
+          </div>
+        </div>
+    
+      </div>
 </body>
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+
 </html>

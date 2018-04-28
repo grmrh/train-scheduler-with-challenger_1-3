@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,12 @@
 <script>
   // Initialize Firebase
   var config = {
-  apiKey: "AIzaSyASRuqWmMZXjY-vsWis0rAz3Li_zG2erac",
-  authDomain: "mypro1-a5ac8.firebaseapp.com",
-  databaseURL: "https://mypro1-a5ac8.firebaseio.com",
-  projectId: "mypro1-a5ac8",
-  storageBucket: "mypro1-a5ac8.appspot.com",
-  messagingSenderId: "990386012661"
+    apiKey: "AIzaSyASRuqWmMZXjY-vsWis0rAz3Li_zG2erac",
+    authDomain: "mypro1-a5ac8.firebaseapp.com",
+    databaseURL: "https://mypro1-a5ac8.firebaseio.com",
+    projectId: "mypro1-a5ac8",
+    storageBucket: "mypro1-a5ac8.appspot.com",
+    messagingSenderId: "990386012661"
   };
   firebase.initializeApp(config);
 </script>
@@ -32,7 +33,7 @@
     signInSuccessUrl: 'loggedIn.html',
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,  
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       firebase.auth.EmailAuthProvider.PROVIDER_ID
     ],
     // Terms of service url.
@@ -44,15 +45,23 @@
   // The start method will wait until the DOM is loaded.
   ui.start('#firebaseui-auth-container', uiConfig);
 </script>
-  <body>
+
+<body>
+  <div class="row">
+    <div class="col col-md-6">
     <!-- Include a simple background image & title -->
-  <div>
-  </div>
-    <!-- The surrounding HTML is left untouched by FirebaseUI.
+      <div id="login-image" align="center">
+        <img src="assets/css/PE2.jpg">
+      </div>
+    </div>
+    <div class="col col-md-6">
+      <!-- The surrounding HTML is left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
-    <h1 align="center" style="color:white;">Firebase Auth Quickstart Demo</h1>
-    <div id="firebaseui-auth-container"></div>
-    <!-- <div id="loader">Loading...</div>   -->
-  </body>
+      <h1 align="center" style="color:rgb(70, 34, 34);">Want to on board? Sign in (tickets not required).</h1>
+      <div id="firebaseui-auth-container"></div>
+    </div>
+  </div>
+  <!-- <div id="loader">Loading...</div>   -->
+</body>
 
 </html>
