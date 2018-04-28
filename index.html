@@ -29,7 +29,7 @@
   // FirebaseUI config.
   var uiConfig = {
     //signInSuccessUrl: 'loggedIn.html',
-    signInSuccessUrl: 'trainscheduler.html',
+    signInSuccessUrl: 'loggedIn.html',
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,  
@@ -44,18 +44,15 @@
   // The start method will wait until the DOM is loaded.
   ui.start('#firebaseui-auth-container', uiConfig);
 </script>
-
-<!-- Include a simple background image & title -->
-
-  <div>
-
-  </div>
   <body>
+    <!-- Include a simple background image & title -->
+  <div>
+  </div>
     <!-- The surrounding HTML is left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
     <h1 align="center" style="color:white;">Firebase Auth Quickstart Demo</h1>
     <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>  
+    <!-- <div id="loader">Loading...</div>   -->
   </body>
 
 </html>

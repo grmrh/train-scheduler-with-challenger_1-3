@@ -8,7 +8,8 @@
 </head>
 
 <!-- Below is the initialization snippet for my Firebase project. It will vary for each project-->
-<script src="https://cdn.firebase.com/libs/firebaseui/3.6.4/firebase.js"></script>
+<!-- Below is the initialization snippet for my Firebase project. It will vary for each project-->
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -22,7 +23,10 @@
   firebase.initializeApp(config);
 </script>
 
-<body>
+<!-- The code below initializes the sign-in widget from firebaseUI web.-->
+<script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
+
 <!-- A simple script to add text to the page that displays the user's Display Name and Email -->
 <script>
   firebase.auth().onAuthStateChanged(function(user) {
@@ -31,14 +35,16 @@
         ', you are done!</h1><h2>Now get back to what you love building.</h2><h2>' +
           'Need to verify your email address or reset your password?' + 
           'Firebase can handle all of that for you using the email you provided: ' + 
-          user.email + '</h2>';
+          user.email + '</h2>'+ '<h1>Proceed to the web site <a href="trainscheduler.html">' + 
+          'Train Scheduler</a> with firebase authentication as well as the funtionality of updating ' 
+          + 'the next train arrival time and minutes left fields</h1>';
     }
     else {
       console.log("no user signed in");
     }      
   });
 </script>
-
+<body></body>
 <h1>Congratulations you're done! Now get back to what you love building.</h1>
 </body>
 </html>
